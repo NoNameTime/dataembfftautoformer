@@ -1,6 +1,6 @@
 python -u run.py \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path /content/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_24 \
   --model Autoformer \
@@ -20,7 +20,7 @@ python -u run.py \
 
 python -u run.py \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path /content/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_48 \
   --model Autoformer \
@@ -40,7 +40,7 @@ python -u run.py \
 
 python -u run.py \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path /content/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_168 \
   --model Autoformer \
@@ -60,7 +60,7 @@ python -u run.py \
 
 python -u run.py \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path /content/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_336 \
   --model Autoformer \
@@ -80,7 +80,7 @@ python -u run.py \
 
 python -u run.py \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path /content/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_720 \
   --model Autoformer \
