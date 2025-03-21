@@ -169,8 +169,12 @@ class Exp_Main(Exp_Basic):
 
             adjust_learning_rate(model_optim, epoch + 1, self.args)
 
-        best_model_path = path + '/' + 'checkpoint.pth'
-        self.model.load_state_dict(torch.load(best_model_path))
+        best_model_path = path+'/'+'checkpoint.pth'
+        checkpoint = torch.load(best_model_path)
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+        self.model.enc_embedding.load_state_dict(checkpoint['enc_embedding_state_dict'])
+        self.model.dec_embedding.load_state_dict(checkpoint['dec_embedding_state_dict'])
+
 
         return
 
@@ -243,9 +247,13 @@ class Exp_Main(Exp_Basic):
 
         if load:
             path = os.path.join(self.args.checkpoints, setting)
-            best_model_path = path + '/' + 'checkpoint.pth'
+            best_model_path = path+'/'+'checkpoint.pth'
             logging.info(best_model_path)
-            self.model.load_state_dict(torch.load(best_model_path))
+            checkpoint = torch.load(best_model_path)
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            self.model.enc_embedding.load_state_dict(checkpoint['enc_embedding_state_dict'])
+            self.model.dec_embedding.load_state_dict(checkpoint['dec_embedding_state_dict'])
+
 
         preds = []
 
